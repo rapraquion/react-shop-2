@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
 export default class App extends Component {
   constructor() {
@@ -11,39 +11,39 @@ export default class App extends Component {
           id: 1,
           title: "Fisherman's Hat",
           description:
-            "Headgear commonly used by fishermen. Increases fishing skill marginally.",
+            'Headgear commonly used by fishermen. Increases fishing skill marginally.',
           price: 12.99,
-          imageUrl: "https://via.placeholder.com/150x150"
+          imageUrl: 'https://via.placeholder.com/150x150',
         },
         {
           id: 2,
-          title: "Metal Hat",
-          description: "Uncomfortable, but sturdy.",
+          title: 'Metal Hat',
+          description: 'Uncomfortable, but sturdy.',
           price: 8.99,
-          imageUrl: "https://via.placeholder.com/150x150"
-        }
+          imageUrl: 'https://via.placeholder.com/150x150',
+        },
       ],
       beachGear: [
         {
           id: 3,
-          title: "Tent",
-          description: "Portable shelter.",
+          title: 'Tent',
+          description: 'Portable shelter.',
           price: 32.99,
-          imageUrl: "https://via.placeholder.com/150x150"
-        }
-      ]
+          imageUrl: 'https://via.placeholder.com/150x150',
+        },
+      ],
     };
   }
 
   addToCart(item) {
     this.setState({
-      cart: [...this.state.cart, item]
+      cart: [...this.state.cart, item],
     });
   }
 
   checkout = () => {
     this.setState({ cart: [] });
-    alert("Purchase is complete!");
+    alert('Purchase is complete!');
   };
 
   render() {
