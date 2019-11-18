@@ -49,8 +49,18 @@ export default class App extends Component {
     alert('Purchase is complete!');
   };
 
-  deleteFromCart = (id) = {
+  deletFromCart = (id) => {
+    let cartCopy = this.state.cart.map(product => Object.assign({}, product));
+    let index = this.state.cart.findIndex(product => product.id === id);
 
+    if (cartCopy[index].quantity === 1) {
+      cartCopy.splice(index, 1);
+    }
+    else if (cartCopy[index].quantity > 1) {
+      cartCopy[index].quantity--;
+    }
+
+    this.setState({ cart: cartCopy });
   }
 
   render() {
